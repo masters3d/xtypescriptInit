@@ -1,0 +1,32 @@
+{
+  "name": "xtypescript",
+  "version": "0.0.0",
+  "description": "Exercism exercises in Typescript.",
+  "author": "",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/exercism/xtypescript"
+  },
+  "devDependencies": {
+    "jest": "^18.1.0",
+    "ts-jest": "^18.0.3",
+    "typescript": "^2.1.6"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+  },
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  }
+}
