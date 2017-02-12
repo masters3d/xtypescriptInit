@@ -10,13 +10,9 @@
         "noFallthroughCasesInSwitch":true,
         "noImplicitThis":true,
         "noImplicitReturns":true,
-        "sourceMap": true,
-        "rootDir": "."
+        "sourceMap": true
     },
-    "compileOnSave": true,
-    "include": [
-        "src/**/*"
-    ], 
+    "compileOnSave": true, 
     "exclude": [
         "node_modules"
     ]

@@ -14,18 +14,18 @@
     "typescript": "^2.1.6"
   },
   "scripts": {
-    "test": "jest",
-    "typings": "./typings",
-    "postinstall": "sudo npm install typings -g"
+    "test": "jest --no-cache"
   },
   "dependencies": {
-    "@types/jest": "^18.1.1"
+    "@types/jest": "^18.1.1",
+    "@types/node": "^7.0.5"
   },
   "jest": {
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testResultsProcessor": "<rootDir>/node_modules/ts-jest/coverageprocessor.js",
     "moduleFileExtensions": [
       "ts",
       "tsx",
