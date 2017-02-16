@@ -1,5 +1,4 @@
-class ArgumentError {
-}
+class ArgumentError {}
 
 
 class WordProblem{
