@@ -64,7 +64,7 @@ function numberGenerator(input:number):string {
 
     let builder = "";
     builder += thirdPlace == 0 ? "" : `${numberGenerator(thirdPlace)} ${numbersMap.get(level)!}`
-    builder += remainer == 0 ? "" : ` ${numberGenerator(remainer)}`
+    builder += remainer == 0 ? "" : " " + `${numberGenerator(remainer)}`
     return builder;
 }
 
