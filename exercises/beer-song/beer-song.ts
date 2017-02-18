@@ -1,9 +1,8 @@
 
 class Beer {
-    private static pluralize(input:number) : string {
+    private static pluralize(input: number): string {
         if (input === 0) {return "o more bottles "}
-        if (input === 1) {return "1 bottle "}
-        return `${input} bottles `
+        return (input === 1) ? "1 bottle " : `${input} bottles `
     }
 
     static verse(input: number): string {
@@ -26,7 +25,7 @@ Take one down and pass it around, ${Beer.pluralize(input - 1)}${wall}.
         let temp = ``
         for (let i: number = end; i >= start ; i -= 1) {
             temp += Beer.verse(i)
-            if (i != start ) {
+            if (i !== start ) {
                 temp += "\n"
             }
         }
