@@ -9,6 +9,12 @@
     "url": "https://github.com/exercism/xtypescript"
   },
   "devDependencies": {
+  },
+  "scripts": {
+    "test": "jest --no-cache", 
+    "lint": "tslint ${PWD##*/}.ts; tslint ${PWD##*/}.test.ts | exit 0;"
+  },
+  "dependencies": {
     "@types/jest": "^18.1.1",
     "@types/node": "^7.0.5",
     "jest": "^18.1.0",
@@ -16,10 +22,6 @@
     "tslint": "^4.4.2",
     "typescript": "^2.1.6"
   },
-  "scripts": {
-    "test": "jest --no-cache"
-  },
-  "dependencies": {},
   "jest": {
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"

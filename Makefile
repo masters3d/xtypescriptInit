@@ -10,23 +10,21 @@ OUTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
 
 # language specific config (tweakable per language)
 FILEEXT := "ts"
-EXAMPLE := "example.$(FILEEXT)"
+EXAMPLE := "$(ASSIGNMENT).example.$(FILEEXT)"
 TSTFILE := "$(ASSIGNMENT).test.$(FILEEXT)"
 
 all: test
 
-node_modules: package.json
-	@npm prune
-	@npm install
-
-test-assignment: node_modules
+test-assignment:
 	@printf "\e[4mRunning tests for $(ASSIGNMENT) assignment\e[0m\n"
-	@cp gulpfile.js exercises/$(ASSIGNMENT)
-	@cp package.json exercises/$(ASSIGNMENT)
-	@cp exercises/grains/lib/big-integer.$(FILEEXT) $(OUTDIR)
+	@cp -a common/. $(INTDIR)
 	@sed 's/xit/it/g; s/xdescribe/describe/g' exercises/$(ASSIGNMENT)/$(TSTFILE) > $(INTDIR)/$(TSTFILE)
 	@cp exercises/$(ASSIGNMENT)/$(EXAMPLE) $(INTDIR)/$(ASSIGNMENT).$(FILEEXT)
-	@gulp lint test --input $(INTDIR) --output $(OUTDIR)
+	@cd $(INTDIR) && yarn install && yarn lint && yarn test
+
+	
 
 test:
-	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) -s test-assignment || exit 1; done
+	@npm install tslint typescript -g
+	@tslint './**/*.ts?(x)' -c "./common/tslint.json"
+	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) test-assignment || exit 1; done
