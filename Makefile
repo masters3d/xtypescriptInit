@@ -9,9 +9,9 @@ INTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
 OUTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
 
 # language specific config (tweakable per language)
-FILEEXT := "js"
+FILEEXT := "ts"
 EXAMPLE := "example.$(FILEEXT)"
-TSTFILE := "$(ASSIGNMENT).spec.$(FILEEXT)"
+TSTFILE := "$(ASSIGNMENT).test.$(FILEEXT)"
 
 all: test
 
