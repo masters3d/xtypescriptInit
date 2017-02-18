@@ -18,4 +18,4 @@ class PhoneNumber {
         return this.value
     }
 }
-export default PhoneNumber;
+export default PhoneNumber

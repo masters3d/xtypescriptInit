@@ -1,6 +1,5 @@
-/// <reference path="./typings/index.d.ts" />;
 
-import HelloWorld from "./hello-world-example";
+import HelloWorld from "./hello-world";
 
 describe('Hello World', () => {
 

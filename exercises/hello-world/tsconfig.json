@@ -1,5 +1,6 @@
 {
     "compilerOptions": { 
+        "target": "es2017",
         "module": "commonjs",
         "alwaysStrict": true,
         "noUnusedLocals": true,
@@ -11,12 +12,9 @@
         "noImplicitThis":true,
         "noImplicitReturns":true,
         "sourceMap": true,
-        "rootDir": "."
+        "outDir": "./build"
     },
-    "compileOnSave": true,
-    "include": [
-        "src/**/*"
-    ], 
+    "compileOnSave": true, 
     "exclude": [
         "node_modules"
     ]
