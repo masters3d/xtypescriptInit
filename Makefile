@@ -3,10 +3,9 @@ ASSIGNMENT ?= ""
 IGNOREDIRS := "^(\.git|bin|node_modules|docs|.idea|build)$$"
 ASSIGNMENTS = $(shell find ./exercises -maxdepth 1 -mindepth 1 -type d | cut -d'/' -f3 | sort | grep -Ev $(IGNOREDIRS))
 
-# output and intermediate directories
+#intermediate directories
 TMPDIR ?= "/tmp"
 INTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
-OUTDIR := $(shell mktemp -d "$(TMPDIR)/$(ASSIGNMENT).XXXXXXXXXX")
 
 # language specific config (tweakable per language)
 FILEEXT := "ts"
@@ -20,11 +19,11 @@ test-assignment:
 	@cp -a common/. $(INTDIR)
 	@sed 's/xit/it/g; s/xdescribe/describe/g' exercises/$(ASSIGNMENT)/$(TSTFILE) > $(INTDIR)/$(TSTFILE)
 	@cp exercises/$(ASSIGNMENT)/$(EXAMPLE) $(INTDIR)/$(ASSIGNMENT).$(FILEEXT)
-	@cd $(INTDIR) && yarn install && yarn lint && yarn test
+	@cd $(INTDIR) && yarn install && yarn run lint && yarn test
 
 	
 
 test:
 	@npm install tslint typescript -g
-	@tslint './**/*.ts?(x)' -c "./common/tslint.json"
+	@tslint './**/*.ts?(x)' -c "./common/tslint.json"  ; exit 0
 	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) test-assignment || exit 1; done

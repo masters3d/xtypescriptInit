@@ -112,7 +112,7 @@
         "no-null-keyword": true,
         "no-string-literal": true,
         "radix": true,
-        "no-unused-new": true,
+        // "no-unused-new": true,
         "typeof-compare": true,
         "use-isnan": true,
         "prefer-const": true,
