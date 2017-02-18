@@ -21,8 +21,6 @@ test-assignment:
 	@cp exercises/$(ASSIGNMENT)/$(EXAMPLE) $(INTDIR)/$(ASSIGNMENT).$(FILEEXT)
 	@cd $(INTDIR) && yarn install && yarn run lint && yarn test
 
-	
-
 test:
 	@npm install tslint typescript -g
 	@tslint './**/*.ts?(x)' -c "./common/tslint.json"  ; exit 0
