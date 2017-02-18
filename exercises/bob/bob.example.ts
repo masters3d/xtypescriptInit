@@ -1,32 +1,32 @@
 class Bob {
 
-    private isNullOrWhitespace( input:string ):boolean {
-    if (typeof input === 'undefined' || input == null) return true;
-    return input.replace(/\s/g, '').length < 1;
+    private isNullOrWhitespace( input: string ): boolean {
+    if (typeof input === 'undefined' || input == null) return true
+    return input.replace(/\s/g, '').length < 1
 }
 
-    hey(inputRaw:string):string{
-        let input = inputRaw.trim();
+    hey(inputRaw: string): string{
+        const input = inputRaw.trim()
 
 		if (this.isNullOrWhitespace(input))
 		{
-			return "Fine. Be that way!";
+			return "Fine. Be that way!"
 		}
 
 		if (
             !(input.toLowerCase() == input) &&
 		    (input.toUpperCase() == input)
             ){
-			return "Whoa, chill out!";
+			return "Whoa, chill out!"
 		}
 
 		if ( input.endsWith("?"))
 		{
-			return "Sure.";
+			return "Sure."
 		}
 
-		return "Whatever.";
+		return "Whatever."
     }
 }
 
-export default Bob;
+export default Bob

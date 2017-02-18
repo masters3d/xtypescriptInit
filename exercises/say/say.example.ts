@@ -1,4 +1,4 @@
-  
+
 const numbersMap  = new Map<number, string>(
   [
   [0,  'zero'],
@@ -34,62 +34,62 @@ const numbersMap  = new Map<number, string>(
   [1000000,    'million'],
   [1000000000, 'billion']
   ]
-);
+)
 
-function divideNoDecimal(input:number, by:number):number {
-     return ((input / by) | 0) // this is like a hack to get int width 
+function divideNoDecimal(input: number, by: number): number {
+     return ((input / by) | 0) // this is like a hack to get int width
 }
 
-function classifier(input:number):number{
+function classifier(input: number): number{
     if (input >= 100 && input < 1000 ){
-        return 100;
+        return 100
     }
     if (input < 1000000 && input >= 1000) {
-        return 1000;
+        return 1000
     }
     if (input < 1000000000 && input >= 1000000) {
-        return 1000000;
+        return 1000000
     }
     if (input < 1000000000000 && input >= 1000000000) {
-        return 1000000000;
+        return 1000000000
     }
     throw new Error(`${classifier.name} only accepts values between 100 to 1000000000000 - 1`)
 }
 
-function numberGenerator(input:number):string {
+function numberGenerator(input: number): string {
     if (input < 100) {return zeroTo99(input)}
-    let level = classifier(input)
-    let thirdPlace = divideNoDecimal(input, level);
-    let remainer = input % level;
+    const level = classifier(input)
+    const thirdPlace = divideNoDecimal(input, level)
+    const remainer = input % level
 
-    let builder = "";
+    let builder = ""
     builder += thirdPlace == 0 ? "" : `${numberGenerator(thirdPlace)} ${numbersMap.get(level)!}`
     builder += remainer == 0 ? "" : " " + `${numberGenerator(remainer)}`
-    return builder;
+    return builder
 }
 
-function zeroTo99(input:number):string {
+function zeroTo99(input: number): string {
     if (input > 100) {throw new Error(`${zeroTo99.name} only accepts values 0 to 99`)}
     if (input <= 20 ) {
-        return numbersMap.get(input)!;       
+        return numbersMap.get(input)!
     }
     if (input > 20 && input < 100 ) {
-            let teen = divideNoDecimal(input, 10) * 10;
-            let tens  = numbersMap.get(teen)! ;
-            let remainer = numbersMap.get(input % teen)!;
-            return `${tens}-${remainer}`;
+            const teen = divideNoDecimal(input, 10) * 10
+            const tens  = numbersMap.get(teen)! 
+            const remainer = numbersMap.get(input % teen)!
+            return `${tens}-${remainer}`
     }
-    return "";
+    return ""
 }
 
 class Say {
-    inEnglish(input:number):string{
+    inEnglish(input: number): string{
         if (input < 0 || input > 999999999999) {
-            throw new Error('Number must be between 0 and 999,999,999,999.');
+            throw new Error('Number must be between 0 and 999,999,999,999.')
         }
 
-        return numberGenerator(input);
+        return numberGenerator(input)
     }
 }
 
-export default Say;
+export default Say
