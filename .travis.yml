@@ -1,10 +1,8 @@
 language: node_js
+node_js:
+- "node"
 
 sudo: true
-
-before_install:
-    -sudo npm install -g n;
-    -sudo n stable;
 
 script:
 - make test
