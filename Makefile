@@ -23,5 +23,5 @@ test-assignment:
 
 test:
 	@npm install tslint typescript -g
-	@tslint './**/*.ts?(x)' -c "./common/tslint.json"  ; exit 0
+	@tslint './**/*.ts?(x)' -c "./common/tslint.json" --format "json" >> lintreport.json ; exit 0
 	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) test-assignment || exit 1; done
