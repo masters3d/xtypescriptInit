@@ -6,5 +6,8 @@ cache: yarn
 
 sudo: true
 
+before_script:
+- npm install -g yarn
+
 script:
 - make test
