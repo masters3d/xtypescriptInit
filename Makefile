@@ -19,7 +19,7 @@ test-assignment:
 	@cp -a common/. $(INTDIR)
 	@sed 's/xit/it/g; s/xdescribe/describe/g' exercises/$(ASSIGNMENT)/$(TSTFILE) > $(INTDIR)/$(TSTFILE)
 	@cp exercises/$(ASSIGNMENT)/$(EXAMPLE) $(INTDIR)/$(ASSIGNMENT).$(FILEEXT)
-	@cd $(INTDIR) && yarn install && yarn run lint && yarn test
+	@cd $(INTDIR) && yarn install && yarn lint && yarn test
 
 test:
 	@npm install tslint typescript -g

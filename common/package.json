@@ -12,8 +12,7 @@
   },
   "scripts": {
     "test": "jest --no-cache", 
-    "lintbk": "tslint ${PWD##*/}.ts; tslint ${PWD##*/}.test.ts | exit 0;", 
-    "lint" : "tslint './**/*.ts?(x)' -e './node_modules/*'"
+    "lint": "tslint '*.ts?(x)'; exit 0"
   },
   "dependencies": {
     "@types/jest": "^18.1.1",
