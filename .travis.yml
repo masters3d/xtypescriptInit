@@ -16,5 +16,5 @@ before_script:
 script:
 - make test
 
-after_sucess:
+after_success:
 - danger
