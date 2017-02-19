@@ -2,7 +2,7 @@ language: node_js
 
 sudo: true
 
-before_install: if [[ `npm -v` != 4* ]]; then npm install -g n && n stable; fi
+before_install: if [[ `npm -v` != 4* ]]; then sudo npm install -g n && sudo n stable; fi
 
 script:
 - make test
