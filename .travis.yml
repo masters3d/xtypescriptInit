@@ -6,6 +6,10 @@ cache: yarn
 
 sudo: true
 
+before_install:
+  - gem install bundler
+  - gem install danger
+
 before_script:
 - npm install -g yarn
 
