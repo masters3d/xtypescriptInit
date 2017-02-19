@@ -8,7 +8,7 @@ class Anagram {
         this.value = input
     }
 
-   matches<T extends Iterable<string>>(input: T): string[] {
+   matches(...input: string[]): string[] {
         const result: string[] = []
         for (const each of input) {
             if ( sort(each) === sort(this.value) ) {
