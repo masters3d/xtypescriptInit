@@ -34,4 +34,3 @@ Take one down and pass it around, ${Beer.pluralize(input - 1)}${wall}.
 }
 
 export default Beer
-

@@ -8,3 +8,4 @@ node_modules
 .idea
 .build
 babel-output
+lintreport.json

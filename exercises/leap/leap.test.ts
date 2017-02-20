@@ -18,7 +18,6 @@ describe('A leap year', () => {
     expect(isLeapYear(2000)).toBeTruthy()
   })
 
-  // Feel free to enable the following tests to check some more examples
   describe('Additional example of a leap year that', () => {
 
     it('is not a leap year', () => {
@@ -36,7 +35,5 @@ describe('A leap year', () => {
     it('is reintroduced every 400 years', () => {
       expect(isLeapYear(2400)).toBeTruthy()
     })
-
   })
-
 })

@@ -5,7 +5,6 @@ class Words {
 
         for (const each of inputArray) {
             if (each === "") {continue}
-            // const value = inputMap.get(each) === undefined ? 0 : inputMap.get(each)!
             const value = inputMap.get(each) || 0
 
            inputMap.set(each.trim(), value + 1)

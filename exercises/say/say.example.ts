@@ -40,8 +40,8 @@ function divideNoDecimal(input: number, by: number): number {
      return ((input / by) | 0) // this is like a hack to get int width
 }
 
-function classifier(input: number): number{
-    if (input >= 100 && input < 1000 ){
+function classifier(input: number): number {
+    if (input >= 100 && input < 1000 ) {
         return 100
     }
     if (input < 1000000 && input >= 1000) {
@@ -63,8 +63,8 @@ function numberGenerator(input: number): string {
     const remainer = input % level
 
     let builder = ""
-    builder += thirdPlace == 0 ? "" : `${numberGenerator(thirdPlace)} ${numbersMap.get(level)!}`
-    builder += remainer == 0 ? "" : " " + `${numberGenerator(remainer)}`
+    builder += thirdPlace === 0 ? "" : `${numberGenerator(thirdPlace)} ${numbersMap.get(level)!}`
+    builder += remainer === 0 ? "" : " " + `${numberGenerator(remainer)}`
     return builder
 }
 
@@ -75,7 +75,7 @@ function zeroTo99(input: number): string {
     }
     if (input > 20 && input < 100 ) {
             const teen = divideNoDecimal(input, 10) * 10
-            const tens  = numbersMap.get(teen)! 
+            const tens  = numbersMap.get(teen)!
             const remainer = numbersMap.get(input % teen)!
             return `${tens}-${remainer}`
     }
@@ -83,7 +83,7 @@ function zeroTo99(input: number): string {
 }
 
 class Say {
-    inEnglish(input: number): string{
+    inEnglish(input: number): string {
         if (input < 0 || input > 999999999999) {
             throw new Error('Number must be between 0 and 999,999,999,999.')
         }

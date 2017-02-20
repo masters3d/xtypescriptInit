@@ -15,4 +15,3 @@ describe('Hello World', () => {
     expect(HelloWorld.hello('Sally')).toEqual('Hello, Sally!')
   })
 })
-

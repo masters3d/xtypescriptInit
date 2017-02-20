@@ -83,7 +83,7 @@ describe('Word Problem', () => {
     const question = 'Who is the president of the United States?'
     const problem  = new WordProblem(question)
 
-    expect(problem.answer.bind(problem)).toThrowError( ArgumentError ) 
+    expect(problem.answer.bind(problem)).toThrowError( ArgumentError )
   })
 
 })

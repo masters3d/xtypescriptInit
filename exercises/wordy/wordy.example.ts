@@ -1,7 +1,6 @@
 class ArgumentError {}
 
-
-class WordProblem{
+class WordProblem {
     question: string
     constructor(question: string) {
         this.question = question
@@ -19,7 +18,7 @@ class WordProblem{
 
         let subtotal = 0
 
-        if (array.length > 5 || array.length < 3 ){ throw new ArgumentError()}
+        if (array.length > 5 || array.length < 3 ) { throw new ArgumentError()}
 
         if (array.length >= 3) {
             const a = array[0]
@@ -28,7 +27,7 @@ class WordProblem{
             if (b === undefined) {throw new ArgumentError()}
             subtotal =  b(+a, +c)
         }
-        if (array.length == 5) {
+        if (array.length === 5) {
             const d: MathFunc = operans[array[3]]
             const e = array[4]
             if (d === undefined) {throw new ArgumentError()}
