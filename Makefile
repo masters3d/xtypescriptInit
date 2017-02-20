@@ -33,8 +33,8 @@ all: moveCommonIntoSubDir
 moveAssigmentToSub:
 	@mv ./common/$(ASSIGNMENT).$(FILEEXT) exercises/$(ASSIGNMENT)/$(EXAMPLE)
 	@mv ./common/$(TSTFILE) exercises/$(ASSIGNMENT)/$(TSTFILE)
-	
-moveAssigmentToCommon
+
+moveAssigmentToCommon:
 	@mv ./exercises/$(ASSIGNMENT)/$(EXAMPLE) common/$(ASSIGNMENT).$(FILEEXT)
 	@mv ./exercises/$(ASSIGNMENT)/$(TSTFILE) common/$(TSTFILE)
 
@@ -43,6 +43,5 @@ moveAllIntoCommonDir:
 
 moveCommonIntoSubDir:
 	@for assignment in $(ASSIGNMENTS); do ASSIGNMENT=$$assignment $(MAKE) moveAssigmentToSub || exit 1; done
-
 
 
